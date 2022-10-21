@@ -1,0 +1,6 @@
+
+.panel {
+    display: flex;
+    min-width: 65rem;
+    border: 1rem solid orange;
+}

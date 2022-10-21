@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #8d8d8d;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
