@@ -1,0 +1,9 @@
+
+.display-wrapper {
+    width: 20rem;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    background-color: grey;
+    font-size: 1.6rem;
+    font-weight: bold;
+}

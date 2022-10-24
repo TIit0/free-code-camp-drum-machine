@@ -2,9 +2,8 @@ import "./Buttons.css"
 import letters from "../../utils/letters.json";
 import handleSound from "../../utils/functions/handleSound";
 
-export default function Buttons({power}) {
+export default function Buttons({power, setCurrentSound, currentVolume}) {
 
-    
 
     return (
         <div className="left-panel">
@@ -15,7 +14,7 @@ export default function Buttons({power}) {
                     key={key}
                     className="button"
                     data-key={key}
-                    onClick={() => handleSound(key, power)}>
+                    onClick={() => handleSound(key, power, setCurrentSound, currentVolume)}>
                         {key.toUpperCase()}
                     </button>
                 )
