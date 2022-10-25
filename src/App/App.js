@@ -25,10 +25,11 @@ function App() {
 
     useEffect( () => {
       if (isPowerOn === true) {
-        console.log("on")
-      window.document.addEventListener("keydown", handleEvent);
-      return
-    } 
+        console.log("on");
+        window.document.addEventListener("keydown", handleEvent);
+              
+        return ()=>window.document.removeEventListener("keydown", handleEvent);
+      }
       console.log("off")
       return window.document.removeEventListener("keydown", handleEvent)
     
