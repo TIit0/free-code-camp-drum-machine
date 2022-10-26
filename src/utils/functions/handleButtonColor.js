@@ -1,7 +1,7 @@
 
 
 
-export default function handleButtonColor(e) {
+export default function handleButtonColor(e, sound) {
 
     const event = e.key ? e.key.toLowerCase() : e;
 
@@ -9,7 +9,12 @@ export default function handleButtonColor(e) {
     const stroke = document.querySelector(`.button[data-key="${event}"]`);
     
     stroke.classList.add("playing");
-    stroke.addEventListener("transitionend", () => stroke.classList.remove("playing"));
 
-    
+    function removeClass() {
+        stroke.classList.remove("playing")
+    }
+
+
+    stroke.addEventListener("transitionend", removeClass);
+    sound.addEventListener("ended", removeClass)
 }

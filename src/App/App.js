@@ -14,26 +14,22 @@ function App() {
   const [isPowerOn, setIsPowerOn] = useState(true);
   const [currentSound, setCurrentSound] = useState(null);
   const [currentVolume, setCurrentVolume] = useState(.5);
-  console.warn(currentVolume)
-  console.warn(isPowerOn)
+
 
 
   const handleEvent = useCallback((e) =>  {
     
     return handleSound(e, isPowerOn, setCurrentSound, currentVolume)
-  }, [currentVolume] ) 
+  }, [currentVolume, isPowerOn] ) 
 
     useEffect( () => {
-      if (isPowerOn === true) {
+      if (!isPowerOn) return
         console.log("on");
         window.document.addEventListener("keydown", handleEvent);
               
         return ()=>window.document.removeEventListener("keydown", handleEvent);
-      }
-      console.log("off")
-      return window.document.removeEventListener("keydown", handleEvent)
     
-    }, [currentVolume, isPowerOn])
+    }, [currentVolume, isPowerOn, handleEvent])
 
 
   return (

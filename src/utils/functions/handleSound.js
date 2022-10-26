@@ -17,7 +17,7 @@ export default function handleSound(e, power, setCurrentSound, currentVolume,) {
     console.log(sound.volume)
     sound.currentTime = 0;
     sound.play()
-    handleButtonColor(e);
+    handleButtonColor(e, sound);
 }
 
 
