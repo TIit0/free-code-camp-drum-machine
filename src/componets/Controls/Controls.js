@@ -21,7 +21,14 @@ export default function Controls({ power, setIsPowerOn, currentSound,
                 </button>
             </div>
             <SoundDisplay currentSound={currentSound} />
-            <input type="range" min={0} max={1} step={.20} value={currentVolume} onChange={(e) => setCurrentVolume(power ? parseFloat(e.target.value) : 0)} />
+
+            <input 
+            className="slider"
+            type="range" 
+            min={0} max={1} step={.20} value={currentVolume} 
+            onChange={
+                (e) => setCurrentVolume(power ? parseFloat(e.target.value) : 0)
+                } />
         </div>
     )
 }

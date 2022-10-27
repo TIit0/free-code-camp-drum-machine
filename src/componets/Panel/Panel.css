@@ -2,5 +2,7 @@
 .panel {
     display: flex;
     min-width: 65rem;
+    background-color: #b3b3b3;
     border: 1rem solid orange;
 }
+
